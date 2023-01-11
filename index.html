@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Hola desde HTML</h1>
 
 
 
-    <script>
-        var nombre = "Hector";
-        var genero = "Masculino";
-       // var nombree= prompt('Dame tu nombre completo');
 
-        /* var edad = 19;
-        var numalumnos = 15;
-        var estatura = 1.95;
-        var peso = 55.5;
-        var becado = true; */
+   <script> 
+const num = prompt('Ingresa un numero');
 
-        var edad = prompt('Dame tu edad');
+const Checkdia = (num)=> {
+
+    if (num ==1 ) {
+        console.log ('Es lunes ');
+    }
+    else if (num ==2) {
+        console.log('Es martes')
+    }
+    else if (num ==3) {
+        console.log('Es Miercoles')
+    }
+    else if (num ==4) {
+        console.log('Es Jueves')
+    }
+    else if (num ==5) {
+        console.log('Es Viernes')
+    }
+    else if (num ==6) {
+        console.log('Es Sabado')
+    }
+    else if (num ==7) {
+        console.log('Es Domingo')
+    }
+    else {
+        console.log('Ingresa un numero valido ')
+    }
+
+   
+}
+Checkdia(num);
+
+</script>
 
 
-        if(edad>=100 || edad<=0){
-            console.log('Proporciona una edad real  ');
-        }
-        else if (edad<18 && edad>=1){
-            console.log('Eres menor de edad ');
-        }
-        else if
-        (edad>=18){
-            console.log('Eres mayor de edad  ');
-        }
-     
-        
-        
-
-       // console.log("Hola mi nombre es " + nombre);
-
-       /* console.log(`Hola mi nombre es ${nombre} Mi edad es de ${edad} mi estatura es de ${peso} y mi estarura es de ${estatura}`); 
-
-
-   // console.log("Hola desde Java script") */
-    </script>
 </body>
 
 </html>
-
