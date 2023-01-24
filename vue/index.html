@@ -12,17 +12,14 @@
       <h1>Mis compras</h1>
       <input v-model="producto" placeholder  ="nombre del producto " type="text" >
       <button @click="agregar()">Agregar</button>
-      <button @click="eliminar()">Eliminar</button>
+      <button @click="carrito=[]">Eliminar</button>
       
       
       <table>
-        <tr>
-          <th>Productos</th>
+        <tr v-for="producto in carrito">
+          <th> {{producto}}</th>
         </tr>
-        <tr>
-          
-            <td>{{carrito}}</td>
-        </tr>
+        
 
       </table>
    

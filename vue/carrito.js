@@ -14,11 +14,10 @@ Vue.createApp({
 
         agregar(){
             this.carrito.push(this.producto);
+            this.producto='';
 
-        },
-        eliminar(){
-            this.carrito='';
         }
+        
     }
 
     
