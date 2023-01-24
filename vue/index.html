@@ -9,21 +9,28 @@
 <body>
 
     <div id="app">
-      <h1>Captura tu edad </h1>
-      <input v-model="edad" type="number">
-      <button @click="calcularEdad()"> Calcular </button>
-      <p>{{resultado}}</p>
-     
+      <h1>Mis compras</h1>
+      <input v-model="producto" placeholder  ="nombre del producto " type="text" >
+      <button @click="agregar()">Agregar</button>
+      <button @click="eliminar()">Eliminar</button>
+      
+      
+      <table>
+        <tr>
+          <th>Productos</th>
+        </tr>
+        <tr>
+          
+            <td>{{carrito}}</td>
+        </tr>
 
-    </div>
+      </table>
+   
+              
+  </div>
 
 
-
-    
-
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="model.js"></script>
-
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="carrito.js"></script>
 </body>
 </html>
