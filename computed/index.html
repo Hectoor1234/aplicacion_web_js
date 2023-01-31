@@ -13,15 +13,9 @@
 <body>
 
     <div class="container mt-3" id="app">
-        <label class="form-label">Mi progreso</label>
-        <input v-model="rango" min="0" max="100" type="range" class="form-range">
-
-        <div class="progress">
-            <div :class="'progress-bar bg-'+color" role="progressbar" :style="'width:'+rango+'%'" aria-label="Example with label"
-             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" >{{rango}}%</div>
-          </div>
-      
-          
+       <h1>Calcula tu edad </h1>
+       <input v-model="edad" class="form-control" type="number">
+        <p>{{calculoEdad}}</p>
     </div>
 
 
