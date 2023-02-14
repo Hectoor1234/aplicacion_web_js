@@ -21,7 +21,8 @@ Vue.createApp({
                 cantidad:this.cantidad
             }
             this.productos.push(producto);
-        }
+        },
+        
     
     }
 }).mount('#app')

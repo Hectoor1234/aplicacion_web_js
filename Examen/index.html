@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+
+        <div id="app">
+          
+    <div class="container mt-5" id="app">
+        <h1>Cursos</h1>
+        <form  @submit.prevent="agregar()">
+            <div class="mb-3">
+                <label class="form-label">Nombre del curso</label>
+                <input required v-model="nombrecurso" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripcion curso</label>
+                <input v-model="descripcion" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Creador curso</label>
+                <input v-model="creador" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">imagen del curso</label>
+                <input v-model="imagen" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Precio del curso</label>
+                <input v-model="precio" type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cantidad de cursos comprados</label>
+                <input v-model="cantidad" type="number" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Agregar</button>
+      
+        <div v-for="cursoss in cursos" class="card" style="width: 20rem;">
+           
+            <div class="card-body">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="{{cursoss.acumulador}}" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">{{cursoss.imagen}}</text></svg>
+                <h5 class="card-title">{{cursoss.nombrecurso}}</h5>
+              <p class="card-text">Descripcion: {{cursoss.descripcion}}</p>
+              <p class="card-text">Precio: {{cursoss.precio}}</p>
+              <p class="card-text">Cantidad:{{cursoss.cantidad}}</p>
+              <a href="#" class="btn btn-primary"></a>
+
+            </div>
+
+            <label class="form-label">{{cursoss.acumuladorr}}</label>
+        </form>
+          </div>
+
+        </div>
+        
+
+
+
+        
+
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+   <script src="vue.js"></script>
+
+
+</body>
+
+</html>
