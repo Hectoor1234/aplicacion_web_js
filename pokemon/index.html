@@ -12,9 +12,8 @@
 
 <body>
     <div id="Parcial2" class=" container mt-3">
-        <button @click="getpokemon()" class="btn-btn-primary mt-3">Obtener</button>
 
-        <div v-if="pokemon!=null" class="card mb-3 mt-3 " style="max-width: 540px;">
+        <div v-if="pokemon!=null" v-for="pokem in pokemon"class="card mb-3 mt-3 " style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img :src="pokemon.sprites.other.home.front_shiny" class="img-fluid rounded-start"
