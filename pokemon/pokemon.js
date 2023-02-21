@@ -1,18 +1,19 @@
 Vue.createApp({
     data() {
         return {
-            pokemon: []
+            pokemon: [],
+            loading:null,
+            valores: 20
+            
 
         }
     },
     mounted(){
 
         this.getpokemon()
-    }
+    },
        
         
-        
-    },
 
     methods: {
         //POST CREAR
@@ -20,18 +21,22 @@ Vue.createApp({
         //PUT MODIFICAR
         //DELETE ELIMINAR
         async getpokemon() {
-           var i = 1;
-           while(i<=500){
-
-
-        
-           }
+            this.loading=true;
+            var i = 1;
+           while(i<=this.valores){
             const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + i, {
                 method: 'GET'
+
             }); 
+
             const pokemon = await response.json();
             this.pokemon.push(pokemon);
-            i++
+            i++;
+
+         }
+         this.loading=false;
+
         }
     }
+
 }).mount('#Parcial2')
