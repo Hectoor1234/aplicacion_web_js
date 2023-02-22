@@ -1,6 +1,7 @@
 Vue.createApp({
     data() {
         return {
+            pokemondata:null,
             pokemon: [],
             loading:null,
             valores: 20
@@ -22,6 +23,7 @@ Vue.createApp({
         //DELETE ELIMINAR
         async getpokemon() {
             this.loading=true;
+            this.pokemon=[];
             var i = 1;
            while(i<=this.valores){
             const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + i, {
@@ -37,6 +39,12 @@ Vue.createApp({
          this.loading=false;
 
         }
+    },
+    watch: {
+        valores(){
+            this.getpokemon();
+        }
+
     }
 
 }).mount('#Parcial2')

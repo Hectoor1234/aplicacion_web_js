@@ -19,11 +19,11 @@
             <option value="100">100</option>
             <option value="200">200</option>
           </select>
-          <button @click="getpokemon()"  class="btn btn-primary mt-3 ">Generar</button>
+         
 
 
         <div class="d-flex flex-wrap">
-        <div v-if="pokemon!=null" v-for="pokemon in pokemon"  v-if="loading==true" class="card mb-3 mt-3 " style="max-width: 540px;">
+        <div v-if="pokemon!=null" v-for="pokemon in pokemon"  v-if="loading==true" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="pokemondata=pokemon"class="card mb-3 mt-3 " style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img :src="pokemon.sprites.other.home.front_shiny" class="img-fluid rounded-start"
@@ -32,10 +32,6 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">{{pokemon.name}}</h5>
-                        <p>Habilidades </p>
-                        <small class="badge bg-primary mx-1" v-for="habilidad in pokemon.abilities"> {{habilidad.ability.name}}</small>
-                        <p>Juegos</p>
-                        <small class="badge bg-primary mx-1" v-for="game in pokemon.game_indices"> {{game.version.name}}</small>
                         <p>Tipo</p>
                         <small class="badge bg-primary mx-1" v-for="tipos in pokemon.types"> {{tipos.type.name}}</small>
                     </div>
@@ -45,6 +41,39 @@
         </div>
 
     </div>
+    <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div v-if="pokemondata!=null" class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{pokemondata.name}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <img :src="pokemondata.sprites.other.home.front_shiny" class="img-fluid rounded-start"
+                        alt="...">
+        <div class="modal-body">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title model-xl">{{pokemon.name}}</h5>
+                    <p>Habilidades </p>
+                    <small class="badge bg-primary" v-for="habilidad in pokemondata.abilities"> {{habilidad.ability.name}}</small>
+                    <p>Juegos</p>
+                    <small class="badge bg-primary" v-for="game in pokemondata.game_indices"> {{game.version.name}}</small>
+                    <p>Tipo</p>
+                    <small class="badge bg-primary" v-for="tipos in pokemondata.types"> {{tipos.type.name}}</small>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 </div>
 
